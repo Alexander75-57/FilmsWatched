@@ -33,13 +33,9 @@ const personalMovieDB = {
     privat: false
 };
 
-const question1 = 'Один из последних просмотренных фильмов?';
-const answer1 = '';
-const questionLine1 = prompt(question1, answer1);
+const questionLine1 = prompt('Один из последних просмотренных фильмов?', '');
+const questionLine2 = prompt('На сколько оцените его?', '');
 
-const question2 = 'На сколько оцените его?';
-const answer2 = ''; 
-const questionLine2 = prompt(question2, answer2);
+personalMovieDB.movies[questionLine1] = questionLine2; 
 
-console.log(numberOfFilms, questionLine1, questionLine2);
-
+console.log(personalMovieDB);

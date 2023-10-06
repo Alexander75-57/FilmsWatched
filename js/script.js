@@ -23,4 +23,16 @@
 
 'user strict';
 
-console.log(1);
+const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: {},
+    privat: false
+};
+
+const question_1 = prompt('Один из последних просмотренных фильмов?', '');
+console.log(question_1 );
+

@@ -29,13 +29,16 @@ const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
     actors: {},
-    genres: {},
+    genres: [],
     privat: false
 };
 
 const questionLine1 = prompt('Один из последних просмотренных фильмов?', '');
 const questionLine2 = prompt('На сколько оцените его?', '');
+const questionLine3 = prompt('Один из последних просмотренных фильмов?', '');
+const questionLine4 = prompt('На сколько оцените его?', '');
 
 personalMovieDB.movies[questionLine1] = questionLine2; 
+personalMovieDB.movies[questionLine3] = questionLine4; 
 
 console.log(personalMovieDB);

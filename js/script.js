@@ -21,7 +21,46 @@
 
 Проверить, чтобы все работало без ошибок в консоли */
 
-'user strict';
+//'user strict';
+
+//const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+//const personalMovieDB = {
+//    count: numberOfFilms,//
+//    movies: {},
+//    actors: {},
+//    genres: [],
+//    privat: false
+//};
+
+//const questionLine1 = prompt('Один из последних просмотренных фильмов?', '');
+//const questionLine2 = prompt('На сколько оцените его?', '');
+//const questionLine3 = prompt('Один из последних просмотренных фильмов?', '');
+//const questionLine4 = prompt('На сколько оцените его?', '');
+
+//personalMovieDB.movies[questionLine1] = questionLine2; 
+//personalMovieDB.movies[questionLine3] = questionLine4; 
+
+//console.log(personalMovieDB);
+
+
+/* Задание на урок:
+
+1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
+
+2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки,
+отменить ответ или ввести название фильма длинее, чем 50 символов. Если это происходит - 
+возвращаем пользователя к вопросам опять
+
+3) При помощи условий проверить  personalMovieDB.count, и если он меньше 10 - вывести сообщение
+"Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше - 
+"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
+
+4) Потренироваться и переписать цикл еще двумя способами*/
+
+'use strict';
+
+// Код возьмите из предыдущего домашнего задания
 
 const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
@@ -33,12 +72,28 @@ const personalMovieDB = {
     privat: false
 };
 
-const questionLine1 = prompt('Один из последних просмотренных фильмов?', '');
-const questionLine2 = prompt('На сколько оцените его?', '');
-const questionLine3 = prompt('Один из последних просмотренных фильмов?', '');
-const questionLine4 = prompt('На сколько оцените его?', '');
+for (let i=0; i < 2; i++) {
+    const question1 = prompt('Один из последних просмотренных фильмов?', ''),
+        question2 = prompt('На сколько оцените его?', '');
+    
+    if (question1 != null && question2 != null && question1 != '' && question2 != '' && question1.length < 50) {
+        personalMovieDB.movies[question1] = question2;
+        console.log('done');  
+    } else {
+        console.log('error');
+        i--;
+    } 
+         
+}
 
-personalMovieDB.movies[questionLine1] = questionLine2; 
-personalMovieDB.movies[questionLine3] = questionLine4; 
+if (personalMovieDB.count < 10) {
+    console.log('Просмотрено довольно мало фильмов');
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+    console.log('Вы классический зритель');
+} else if (personalMovieDB.count >= 30) {
+    console.log('Вы киноман');
+} else {
+    console.log('Вы киноман');
+}    
 
-console.log(personalMovieDB);
+console.log('Произошла ошибка');

@@ -130,4 +130,13 @@ function detectPersonalLevel () {
 }
 detectPersonalLevel();
 
-console.log(personalMovieDB);
+
+function showMyDB() {
+    if(personalMovieDB[4] === false) {
+        console.log(personalMovieDB);
+    }
+}
+showMyDB();
+
+
+//console.log(personalMovieDB);

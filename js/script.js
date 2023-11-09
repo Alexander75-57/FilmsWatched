@@ -114,7 +114,7 @@ function rememberMyFilms() {
         }            
     }  
 }
-rememberMyFilms();
+//rememberMyFilms();
 
    
 function detectPersonalLevel () {
@@ -128,15 +128,20 @@ function detectPersonalLevel () {
         console.log('Произошла ошибка');
     } 
 }
-detectPersonalLevel();
+//detectPersonalLevel();
 
 
 function showMyDB() {
-    if(personalMovieDB[4] === false) {
+    if(personalMovieDB.privat == false) {
         console.log(personalMovieDB);
     }
 }
 showMyDB();
 
-
-//console.log(personalMovieDB);
+function writeYourGenres() {
+    for (let i=0; i<=2; i++) {
+        const question3 = +prompt('Ваш любимый жанр под номером', '');
+        personalMovieDB.genres.push(question3);
+    }  
+}
+writeYourGenres();

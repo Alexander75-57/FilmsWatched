@@ -139,9 +139,9 @@ function showMyDB() {
 showMyDB();
 
 function writeYourGenres() {
-    for (let i=0; i<=2; i++) {
-        const question3 = +prompt('Ваш любимый жанр под номером', '');
-        personalMovieDB.genres.push(question3);
+    for (let i=1; i<=3; i++) {
+        const question3 = prompt(`Ваш любимый жанр под номером ${i}`, '');
+        personalMovieDB.genres[i-1] = question3;
     }  
 }
 writeYourGenres();
